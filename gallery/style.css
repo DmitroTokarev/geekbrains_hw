@@ -1,0 +1,35 @@
+html, body{
+    min-height: 100%;
+    margin: 0;
+}
+
+.main{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#bigWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    background-color: aquamarine;
+}
+
+#prevWrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    background-color: red;
+    width: 1000px;
+    flex-wrap: wrap;
+}
+
+#prevWrap img{
+    width: 33%;
+}
+
+#biPic{
+    width: 100%;
+}

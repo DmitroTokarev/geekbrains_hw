@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+		var config = [{
+			href: '/home',
+			name: "Главная"
+		}, {
+			href: '/catalog',
+            name: "Продукция"
+            items: [{
+					href: '/1',
+					name: "Кроссовки"
+				}, {
+					href: '/2',
+					name: "Футболки"
+				}],
+		}, {
+			href: '/reviews',
+			name: "Отзывы",
+		}];
+
+		class Container {
+		    remove(id){
+				document.getElementById(id).innerHTML="";
+		    }
+		};
+
+		class Menu extends Container {
+			constructor(id, config){
+				super();
+				this.id = id;
+		        this.items = []; 
+				this.createItems(config);
+			}
+			createItems(config){
+				for (let i = 0; i < config.length; i++) {
+					this.items.push(new MenuItem(config[i].href, config[i].name));
+					if (config[i].items) {
+						this.items.push(new Menu("submenu" + i, config[i].items));
+					}
+				}
+			}
+			create(){
+				document.write(this.render());
+			}
+			render(){
+				let result = '<ul id="' + this.id + '">'; 
+				
+				for (let i = 0; i < this.items.length; i++) {
+					result += this.items[i].render(); 
+				}
+			
+				result += '</ul>';
+				return result; 
+			}
+		};
+
+		class MenuItem extends Container {
+			constructor(href, name){
+				super();
+				this.href = href;
+				this.name = name;
+			}
+			render(){
+				return '<li><a href="' + this.href + '">' + this.name + '</a></li>';
+			}
+		}
+
+		let menu = new Menu("main-menu", config);
+		menu.create();
+		// menu.remove('main-menu');
+		</script>
+	</body>
+</html>

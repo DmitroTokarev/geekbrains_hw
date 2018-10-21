@@ -6,7 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Document</title>
 	</head>
-
+	<!-- Добавил ветвление пунктов меню -->
 	<body>
 		<script>
 		var config = [{
@@ -33,13 +33,14 @@
 		    }
 		};
 
-		class Menu extends Container {
-			constructor(id, config){
-				super();
+		class Menu extends Container { 
+			constructor(id, config){ 
+				super(); 
 				this.id = id;
 		        this.items = []; 
 				this.createItems(config);
 			}
+			
 			createItems(config){
 				for (let i = 0; i < config.length; i++) {
 					this.items.push(new MenuItem(config[i].href, config[i].name));
@@ -49,17 +50,17 @@
 				}
 			}
 			create(){
-				document.write(this.render());
+				document.write(this.render()); 
 			}
 			render(){
 				let result = '<ul id="' + this.id + '">'; 
 				
 				for (let i = 0; i < this.items.length; i++) {
-					result += this.items[i].render(); 
+					result += this.items[i].render();
 				}
 			
-				result += '</ul>';
-				return result; 
+				result += '</ul>'; 
+				return result;
 			}
 		};
 
@@ -74,7 +75,7 @@
 			}
 		}
 
-		let menu = new Menu("main-menu", config);
+		let menu = new Menu("main-menu", config); 
 		menu.create();
 		// menu.remove('main-menu');
 		</script>

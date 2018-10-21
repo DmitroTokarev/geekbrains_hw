@@ -6,8 +6,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Document</title>
 	</head>
-	<!-- 1. Улучшить базовый класс, добавив в него общий для всех метод remove(), 
-	который удаляет соответствующий DOM-узел. -->
+	<!-- Добавил ветвление пунктов меню -->
 	<body>
 		<script>
 		var config = [{
@@ -32,18 +31,16 @@
 		    remove(id){
 				document.getElementById(id).innerHTML="";
 		    }
-		
-		    /*Со вторым заданием разобраться не успел. Я так понимаю, нужно было создать наследника типа SubMenu от Menu и SubItem от MenuItem, которые бы проделывали аналогичную процедуру
-			с подменю. Правда, до конца я механизм понять не смог. Я бы хотел, чтобы вы прочли мои комментарии по поводу того, что вообще происходит в коде и прояснили, насколько я правильно понял каждый момент :) */
 		};
 
-		class Menu extends Container { //изначально наследуем класс контейнер, который, видимо, нужен только для выполнения первого задания
-			constructor(id, config){ //создаем конструктор, который принимает id создаваемого меню и массив с пунктами
-				super(); //чтобы код заработал, для начала нужно наследовать свойства и методы родителя
-				this.id = id; //добавляем свойства в класс меню
+		class Menu extends Container { 
+			constructor(id, config){ 
+				super(); 
+				this.id = id;
 		        this.items = []; 
-				this.createItems(config); //создаем метод, который будет использовать данные массива с пунктами
+				this.createItems(config);
 			}
+			
 			createItems(config){
 				for (let i = 0; i < config.length; i++) {
 					this.items.push(new MenuItem(config[i].href, config[i].name));
@@ -53,48 +50,34 @@
 				}
 			}
 			create(){
-				document.write(this.render()); //запускаем функцию, которая генерит разметку
+				document.write(this.render()); 
 			}
 			render(){
-				let result = '<ul id="' + this.id + '">'; //открываем список, задаем принятый id
+				let result = '<ul id="' + this.id + '">'; 
 				
 				for (let i = 0; i < this.items.length; i++) {
-					result += this.items[i].render(); //обходим массив уже созданных пунктов и рендерим каждый. Метод рендер в данном случае привязан к MenuItem
+					result += this.items[i].render();
 				}
 			
-				result += '</ul>'; //закрываем тег
-				return result; //возращаем сгенерированный список
+				result += '</ul>'; 
+				return result;
 			}
 		};
 
-		class MenuItem extends Container { //аналогичная история с Menu и Container
+		class MenuItem extends Container {
 			constructor(href, name){
 				super();
 				this.href = href;
 				this.name = name;
 			}
 			render(){
-				return '<li><a href="' + this.href + '">' + this.name + '</a></li>'; // функция возвращает элемент списка, ссылка которого соответствует значениям свойств объектов массива config
+				return '<li><a href="' + this.href + '">' + this.name + '</a></li>';
 			}
 		}
 
-		//Чтобы создать подменю
-
-		let menu = new Menu("main-menu", config); //передаем параметры в конструктор - id и конфигурирующий файл
-		menu.create(); //создаем меню
+		let menu = new Menu("main-menu", config); 
+		menu.create();
 		// menu.remove('main-menu');
 		</script>
-		<!-- хотел сделать кнопку для очистки пунктов -->
 	</body>
 </html>
-
-<!-- 2. Создать наследника класса Menu – новый класс должен уметь строить меню
-со вложенными пунктами, т.е с подменю. Подсказка: главный секрет в
-обходе объекта пунктов меню и проверке типов. -->
-
-
-<!-- На 3 задание совсем не осталось времени, пока разбирал лекцию и дз, наступил уже четверг)) Случайно раньше увидел
-реализацию на ютубе через атрибуты "x" и "у" у каждого ингредиента. Цикл проходил по чекбоксам и проверял, если
-чекбокс выделен, то скрипт принимал значения атрибутов. Один означал цену, второй калории. Затем все суммировалось и выводилось в "Цена: Калории:" 
-Не знаю, правда, насколько это решение рационально.
--->

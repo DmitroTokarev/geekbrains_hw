@@ -1,0 +1,11 @@
+[
+    {
+        "option": "<option label="Новосиб" value="NSK">"
+    },
+    {
+        "option": "<option label="МСК" value="MSC">"
+    },
+    {
+        "option": "<option label="СПБ" value="SPB">"
+    }
+]

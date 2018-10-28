@@ -1,0 +1,46 @@
+.buttons {
+    overflow: hidden;
+}
+
+.page-btn {
+    display: block;
+    width: 200px;
+    height: 40px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    float: left;
+    margin-right: 2px;
+    text-decoration: none;
+    line-height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.page-btn:hover {
+    background-color: rgb(99, 197, 99); 
+}
+
+.page {
+    width: 806px;
+    height: 300px;
+    border: 1px solid blueviolet;
+    box-sizing: border-box;
+    display: none;
+    background-color: blueviolet;
+}
+
+.page-content {
+    padding-left: 20px;
+    padding-top:20px;
+    font-size: 30px;
+    color: white;
+}
+
+.active-page {
+    display: block;
+}
+
+.active-btn {
+    background-color: blueviolet;
+}

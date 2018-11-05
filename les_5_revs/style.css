@@ -1,0 +1,45 @@
+main{
+    width: 900px;
+    margin: 0 auto;
+}
+
+.comitRev{
+    background-color: rgb(172, 221, 243);
+    min-height: 100px;
+    padding: 30px;
+}
+
+.comitRev p {
+    
+    font-size: 20px;
+}
+
+.yourText textarea {
+    min-width: 900px;
+    min-height: 100px;
+    margin-bottom: 20px;
+    max-width: 900px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.yourText a{
+    display: block;
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    background-color: green;
+    color:white;
+}
+
+.checkRev {
+    background-color: rgb(182, 182, 182);
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.checkRev a {
+    margin-right: 40px;
+}

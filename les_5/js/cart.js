@@ -79,7 +79,7 @@ class Cart {
 					this.removeProduct(response.id);
 					break;
 				case Api.clear:
-					this.onClear();
+					this.items = [];
 					break;
 			}
 			this.calc();

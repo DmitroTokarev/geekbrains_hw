@@ -1,0 +1,70 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url("../fonts/BebasNeue/BebasNeue\ Regular.ttf");
+}
+
+@font-face {
+    font-family: BebasNeue-Bold;
+    src: url("../fonts/BebasNeue/BebasNeueBold.ttf");
+}
+
+@font-face {
+    font-family: Open-Sans;
+    src: url("../fonts/BebasNeue/OpenSans-Regular.ttf");
+}
+
+
+.respond-to(@device, @content) {
+    & when (@device = phones) {
+      @media all and (max-width: 479px) { @content(); }
+    }
+    & when (@device = wide-phones) {
+      @media all and (min-width: 480px) and (max-width: 767px) { @content(); }
+    }
+    & when (@device = tablets) {
+      @media all and (min-width: 768px) and (max-width: 991px) { @content(); }
+    }
+    & when (@device = small-desktops) {
+      @media all and (min-width: 992px) and (max-width: 1199px) { @content(); }
+    }
+    & when (@device = lg-desktops) {
+      @media all and (min-width: 1200px) and (max-width: 1440px) { @content(); }
+    }
+    & when (@device = xlg-desktops) {
+      @media all and (min-width: 1441px) and (max-width: 1920px) { @content(); }
+    }
+}
+
+.custom-resol(@_minWidth, @_maxWidth, @_styles) {
+@media all and (min-width: @_minWidth) and (max-width: @_maxWidth) {
+  @_styles();
+}
+}
+
+@block-height: 794px;
+@orangeRed: #d25b38;
+
+.desc-text() {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #636363;
+    font-family: Open-Sans, sans-serif;
+}
+
+.side-heads() {
+    font-size: 87.5px;
+    color: #454443;
+    font-family: BebasNeue-Bold, sans-serif;
+    line-height: 0.92;
+}
+
+.working-hours() {
+    font-family: BebasNeue-Bold, sans-serif;
+    font-size: 39.5px;
+    color: #fff;
+    border-bottom: 1px solid white;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+

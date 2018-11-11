@@ -1,0 +1,6 @@
+[2018-07-15 14:23:39] layer "+123 4567 8900 +123 4567 8900": Expected Either a default asset specification or a layer asset specification but "+" found.
+[2018-07-15 14:23:39] layer "free@psdfreebies.com": Unsupported extension: com
+[2018-07-15 14:23:39] layer "www.psdfreebies.com": Unsupported extension: com
+[2018-07-15 14:23:39] layer " Copyright © 2017. Design by PSDFreebies.com": Unsupported extension: com
+[2018-07-15 14:23:39] layer "PSDFreebies.com": Unsupported extension: com
+[2018-07-15 15:15:29] layer "PSDFreebies.com": Unsupported extension: com
